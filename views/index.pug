@@ -1,6 +1,16 @@
 extends layout
-
 block content
   h1= title
-  p Welcome to Assignment-10 of web Apps #{title}
-  button(type="button", class="btn btn-primary") Press Me
+  p WEB APPS ASSIGNMENT-10 #{title}
+  button(type="button", class="btn btn-secondary", onclick="doBump()") Press me
+  div(id="bump") 
+    i Bump the count
+  script. 
+    var count = 0;
+    var bump = 1;
+    function doBump(){
+      count = count + bump;
+      bump = bump + 1;
+      document.getElementById("bump").innerHTML="Count "+count+" with bump "+bump;
+    }
+  
